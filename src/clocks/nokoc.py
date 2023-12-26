@@ -1,6 +1,6 @@
 from micropython import const
 from tempos import g, rtc, sched
-from graphics import rgb, WHITE, BLACK, BLUE, CYAN, RED
+from graphics import rgb, WHITE, BLACK, BLUE, CYAN, RED, YELLOW, GREEN
 from fonts import roboto24,roboto36
 import array
 import math
@@ -47,7 +47,7 @@ def dialtext(text,x,y,big=False):
     if big: g.setfont(roboto36)
     else: g.setfont(roboto24)
     g.setfontalign(0, -1)
-    g.setcolor(BLACK, WHITE)
+    g.setcolor( WHITE,BLACK)
     g.text(ds,x,y)
     
 def dial(t):
@@ -79,9 +79,8 @@ def onSecond():
     SD = rtc.datetime()
     # begin = ticks_ms()
     dial(SD)
-    hourH(SD[4] * 30 + SD[5] // 2, BLACK)
-    minH(SD[5] * 6, BLUE)
-    g.ellipse(CX, CY, 6, 6, BLACK, True)
+    hourH(SD[4] * 30 + SD[5] // 2, YELLOW)
+    minH(SD[5] * 6, GREEN)
     secH(SD[6] * 6, RED)
     g.ellipse(CX, CY, 3, 3, RED, True)
     g.show()
