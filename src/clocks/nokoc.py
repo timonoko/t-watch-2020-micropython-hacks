@@ -68,11 +68,11 @@ def secH(a, c):
 
 
 def minH(a, c):
-    drawRotRect(6, 0, R - 10, a, c)
+    drawRotRect(6, 20, R - 20, a, c)
 
 
 def hourH(a, c):
-    drawRotRect(15, 0, R - 50, a, c)
+    drawRotRect(15, 20, R - 50, a, c)
 
 
 def onSecond():
