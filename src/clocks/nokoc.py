@@ -22,7 +22,7 @@ H = const(240)
 R = const(120)
 CX = const(120)
 CY = const(120)
-GREY = rgb(220, 220, 220)
+GREY = rgb(220, 255, 220)
 months = [
     "Tammi",
     "Helmi",
@@ -47,7 +47,7 @@ def dialtext(text,x,y,big=False):
     if big: g.setfont(roboto36)
     else: g.setfont(roboto24)
     g.setfontalign(0, -1)
-    g.setcolor( WHITE,BLACK)
+    g.setcolor( GREY,BLACK)
     g.text(ds,x,y)
     
 def dial(t):
