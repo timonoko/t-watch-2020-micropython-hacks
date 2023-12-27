@@ -22,7 +22,7 @@ H = const(240)
 R = const(120)
 CX = const(120)
 CY = const(120)
-GREY = rgb(220, 255, 220)
+GREY = rgb(80,210, 210)
 months = [
     "Tammi",
     "Helmi",
