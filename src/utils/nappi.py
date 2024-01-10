@@ -5,16 +5,21 @@ from button import Theme, RoundButton, ButtonMan
 from widgets import Label
 import time
 from wifi import do_connected_action
-from urequests import request
+import urequests_noko as ure
 import math
 import os
 
 status = Label(10, 60, 180, 40, roboto24, YELLOW)
 progress = Label(200, 60, 40, 40, roboto24, YELLOW)
 
+ONN="OFF"
+
 def curl(url):
-    try: request("GET", url)
-    except: print("pikku virhe")
+    global ONN
+    a=ure.get(url)
+    if "button button2" in a.text: ONN="OFF"
+    else: ONN="ON"
+        
 
 def act_on(): curl("http://192.168.1.64/5/on")
 def act_off(): curl("http://192.168.1.64/5/off")
@@ -45,8 +50,8 @@ butt("ON",30,120,GREEN)
 butt("OFF",130,120,RED)
     
 def app_init():
-    global buttons
-    centre_text("NAPPI 64", roboto36, 80, 10, WHITE)
+    global buttons,ONN
+    centre_text("64 "+ONN, roboto36, 80, 10, WHITE)
     buttons.start()
 
 def app_end():
