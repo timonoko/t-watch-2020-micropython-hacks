@@ -57,7 +57,7 @@ def dial(t):
     g.fill(WHITE)
     png.drawPNG(dialpic, 0, 0)
     dialtext(viikko[t[3]],20,0,True)
-    dialtext("{:02}".format(t[2]),20,220)
+    dialtext(str(t[2]),20,220)
     huu=t[4]%12
     if huu>2 and huu<10: dialtext("{:02}:{:02}".format(t[4],t[5]),120,65,True)
     if huu<4 or huu>8: dialtext("{:02}:{:02}".format(t[4],t[5]),120,145,True)
